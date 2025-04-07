@@ -32,20 +32,26 @@
     </div>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import { ref } from 'vue'
-import { LMap, LTileLayer, LMarker, LPolyline } from '@vue-leaflet/vue-leaflet'
+import type { LeafletMouseEvent } from 'leaflet'
+
+// Types
+type LatLngPoint = {
+    lat: number
+    lng: number
+}
 
 // State
-const center = ref([32.6423552, -16.9067382])
-const trajectory = ref([])
+const center = ref<[number, number]>([32.6423552, -16.9067382])
+const trajectory = ref<LatLngPoint[]>([])
 const enableDrawing = ref(false)
 
 // Refs
 const mapContainer = ref(null)
 
 // Handle map click
-const handleMapClick = (event) => {
+const handleMapClick = (event: LeafletMouseEvent) => {
     if (!enableDrawing.value) return
     const { latlng } = event
     trajectory.value.push({

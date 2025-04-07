@@ -8,8 +8,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/icon',
     '@nuxt/eslint',
-    '@nuxtjs/leaflet',
-    'nuxt-mapbox'
+    '@nuxtjs/leaflet'
   ],
   css: ['~/assets/css/main.css', 'leaflet/dist/leaflet.css']
 })

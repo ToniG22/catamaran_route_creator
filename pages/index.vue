@@ -6,10 +6,8 @@
     </div>
 </template>
 
-<script lang="ts">
-import { UCard } from '#components';
+<script lang="ts" setup>
 import RouteMap from '~/components/routeMap.vue';
-
 
 </script>
 

@@ -69,7 +69,7 @@ const clearTrajectory = () => {
 const exportToCSV = () => {
     if (trajectory.value.length === 0) return
 
-    const csvRows = ['index,lat,lng']
+    const csvRows = ['index,lat,lon']
     trajectory.value.forEach((point, index) => {
         csvRows.push(`${index},${point.lat},${point.lng}`)
     })
